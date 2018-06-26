@@ -23,3 +23,6 @@ class GoodsInfo(models.Model):
     ginventory = models.IntegerField()
     gcontent = models.CharField(max_length=100)
     gtype = models.ForeignKey(TypeInfo)
+
+    def __str__(self):
+        return self.gname.encode('utf-8')

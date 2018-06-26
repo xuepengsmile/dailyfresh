@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for dailyfresh project.
 
@@ -23,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'x2asah0&)p&$sz1)o0kqq$9*6etz!6zag5%i3xso5o*k7uex$o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'userinfo',
     'df_goods',
+    'df_cart',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +128,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static/media')
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    }
+}
+
+#自动生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+# HAYSTACK_DEFAULT_OPERATOR = 'OR'
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 18

@@ -1,0 +1,52 @@
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Jun 13 06:00:15 2018] ***
+compiled with version: 5.4.0 20160609 on 14 May 2018 03:12:33
+os: Linux-4.13.0-43-generic #48~16.04.1-Ubuntu SMP Thu May 17 12:56:46 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/l/Desktop/mydailyfresh/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/l/.virtualenvs/xuepeng/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to '/home/l/Desktop/mydailyfresh/dailyfresh'
+chdir(): No such file or directory [core/uwsgi.c line 2629]
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Jun 13 06:10:47 2018] ***
+compiled with version: 5.4.0 20160609 on 14 May 2018 03:12:33
+os: Linux-4.13.0-43-generic #48~16.04.1-Ubuntu SMP Thu May 17 12:56:46 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/l/Desktop/mydailyfresh/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/l/.virtualenvs/xuepeng/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to 'home/l/Desktop/mydailyfresh/dailyfresh
+chdir(): No such file or directory [core/uwsgi.c line 2629]
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Jun 13 06:25:55 2018] ***
+compiled with version: 5.4.0 20160609 on 14 May 2018 03:12:33
+os: Linux-4.13.0-43-generic #48~16.04.1-Ubuntu SMP Thu May 17 12:56:46 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/l/Desktop/mydailyfresh/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/l/.virtualenvs/xuepeng/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to home/l/Desktop/mydailyfresh/dailyfresh
+chdir(): No such file or directory [core/uwsgi.c line 2629]
+*** Starting uWSGI 2.0.17 (64bit) on [Wed Jun 13 06:38:06 2018] ***
+compiled with version: 5.4.0 20160609 on 14 May 2018 03:12:33
+os: Linux-4.13.0-43-generic #48~16.04.1-Ubuntu SMP Thu May 17 12:56:46 UTC 2018
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/l/Desktop/mydailyfresh/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/l/.virtualenvs/xuepeng/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to home/l/Desktop/mydailyfresh/dailyfresh
+chdir(): No such file or directory [core/uwsgi.c line 2629]

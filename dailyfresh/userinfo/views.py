@@ -5,6 +5,8 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from models import *
 from hashlib import sha1
+import user_decorator
+from df_goods.models import GoodsInfo
 
 
 def register(request):
@@ -58,6 +60,7 @@ def login_handle(request):
     uname = post.get('username')
     pwd = post.get('pwd')
     jizhu = post.get('jizhu', 0)
+    users = UserInfo.objects.filter(uname=uname)
 
     # 判断用户名
     count = UserInfo.objects.filter(uname=uname).count()
@@ -87,19 +90,38 @@ def login_handle(request):
             red.set_cookie('uname', uname)
         else:
             red.set_cookie('uname', '', max_age=-1)
+
+        request.session['uname'] = uname
+        request.session['user_id'] = users[0].id
         return red
 
 
+@user_decorator.login
 def info(request):
-    context = {'title': '用户中心', 'shopping_cart': 0}
+    goods_ids = request.COOKIES.get('goods_ids', '')
+    goods_id_list = goods_ids.split(',')
+    goods_list = []
+    if len(goods_id_list):
+        for goods_id in goods_id_list:
+            goods = GoodsInfo.objects.get(id=int(goods_id))
+            goods_list.append(goods)
+
+    context = {'title': '用户中心', 'shopping_cart': 0, 'goods_list': goods_list}
     return render(request, 'userinfo/user_center_info.html', context)
 
 
+@user_decorator.login
 def site(request):
     context = {'title': '收货地址', 'shopping_cart': 0}
     return render(request, 'userinfo/user_center_site.html', context)
 
 
+@user_decorator.login
 def order(request):
     context = {'title': '订单信息', 'shopping_cart': 0}
     return render(request, 'userinfo/user_center_order.html', context)
+
+
+def logout(request):
+    request.session.flush()
+    return HttpResponseRedirect('/')
